@@ -1,7 +1,5 @@
-import React, {Component} from "react";
-import "../styles/Layout.less";
+import React from "react";
 import "../styles/common.less";
-import block from "../helpers/BEM";
 import {Switch, Route} from 'react-router-dom'
 import {connect} from "react-redux";
 import {withRouter} from 'react-router-dom';
@@ -10,8 +8,6 @@ import Login from './Login';
 import User from './User';
 import Album from './Album';
 import Photo from './Photo';
-
-const b = block("Layout");
 
 const Layout = () => (
     <Switch>

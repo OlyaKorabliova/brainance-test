@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 import block from "../helpers/BEM";
-import "../styles/AllAlbums.less";
+import "../styles/Gallery.less";
 import {connect} from "react-redux";
 import {getAlbumById} from "../reducers";
 import {Link} from "react-router-dom";
 
-const b = block("AllAlbums");
+const b = block("Gallery");
 
 class AllAlbums extends Component {
     constructor(props) {
@@ -14,13 +14,13 @@ class AllAlbums extends Component {
     }
 
     render() {
-        return <ul className={b()}>
+        return <div className={b()}>
             {this.props.albums.map(al =>
-                <Link key={al.id} to={`/album/${al.id}`}>
-                    <li>{al.title}</li>
+                <Link className={b('block')} key={al.id} to={`/album/${al.id}`}>
+                    <div className={b("caption")}>{al.title}</div>
                 </Link>
             )}
-        </ul>
+        </div>
     }
 }
 

@@ -1,0 +1,35 @@
+.Header {
+  background-color: #99ebf5;
+  text-align: center;
+  height: 80px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  box-shadow: 0 5px 50px 6px rgba(0, 0, 1, 0.4);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  &__title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgba(87, 87, 87, 0.53);
+    width: 70%;
+    margin: 5px auto;
+  }
+  &__btn {
+    position: absolute;
+    right: 5%;
+    top: 20px;
+    color: white;
+    background-color: rgba(87, 87, 87, 0.53);
+    opacity: 0.8;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

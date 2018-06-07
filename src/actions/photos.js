@@ -14,7 +14,6 @@ export const fetchSpecificPhoto = id => async (dispatch) => {
     dispatch(fetchPhoto(id));
     let photo = await (await fromApi.getPhoto(id)).json();
     photo = normalize([photo], photosListSchema);
-    console.log('photo[]', photo);
     dispatch(fetchPhotoSuccess(id, photo.result, photo.entities.photos))
 };
 

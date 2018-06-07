@@ -1,3 +1,45 @@
 .Login {
-
+  position: absolute;
+  margin: auto;
+  top: -150px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 500px;
+  height: 250px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #99ebf5;
+  border-radius: 10px;
+  &__greeting {
+    text-align: center;
+    color: rgba(87, 87, 87, 0.53);
+    margin-top: 30px;
+  }
+  &__input {
+    width: 320px;
+    height: 40px;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: #ccc 1px solid;
+    margin: 50px auto 0 auto;
+    display: block;
+    &::placeholder {
+      color: #979797;
+    }
+  }
+  &__btn {
+    display: block;
+    margin: 15px auto;
+    color: white;
+    background-color: rgba(87, 87, 87, 0.53);
+    opacity: 0.8;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    &:hover {
+      opacity: 1;
+    }
+  }
 }

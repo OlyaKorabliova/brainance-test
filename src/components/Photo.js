@@ -4,6 +4,7 @@ import "../styles/Photo.less";
 import {getPhotoById} from "../reducers";
 import {fetchSpecificPhoto} from "../actions/photos";
 import {connect} from "react-redux";
+import Header from "./Header";
 
 const b = block("Photo");
 
@@ -21,7 +22,10 @@ class Photo extends Component {
             fetchPhoto(id);
             return null;
         }
-        return <div className={b()}>Photo #{photo.id}</div>
+        return <div>
+            <Header text={photo.title}/>
+            <img className={b()} src={photo.url} alt={`Photo #${photo.id}`}/>
+        </div>
     }
 }
 

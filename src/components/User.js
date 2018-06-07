@@ -1,13 +1,10 @@
 import React, {Component} from "react";
-import block from "../helpers/BEM";
-import "../styles/User.less";
 import {connect} from "react-redux";
 import {fetchInputUser} from "../actions/users";
 import {getAllAlbumsIds, getUserById} from "../reducers";
 import {fetchUserAlbums} from "../actions/albums";
 import AllAlbums from "./AllAlbums";
-
-const b = block("User");
+import Header from "./Header";
 
 class User extends Component {
     constructor(props) {
@@ -23,8 +20,8 @@ class User extends Component {
             fetchAlbums(id);
             return null;
         }
-        return <div className={b()}>
-            User #{user.id} Albums Must be here
+        return <div>
+            <Header text={`Hi, ${user.name}`}/>
             <AllAlbums albumsIds={albumsIds}/>
         </div>
     }

@@ -1,11 +1,12 @@
 import React, {Component} from "react";
 import block from "../helpers/BEM";
-import "../styles/PhotosInAlbum.less";
+import "../styles/Gallery.less";
+
 import {connect} from "react-redux";
 import {getPhotoById} from "../reducers";
 import {Link} from "react-router-dom";
 
-const b = block("PhotosInAlbum");
+const b = block("Gallery");
 
 class PhotosInAlbum extends Component {
     constructor(props) {
@@ -14,13 +15,14 @@ class PhotosInAlbum extends Component {
     }
 
     render() {
-        return <ol className={b()}>
+        return <div className={b()}>
             {this.props.photos.map(ph =>
-                <Link key={ph.id} to={`/photo/${ph.id}`}>
-                    <li>{ph.title}</li>
+                <Link className={b('block')} key={ph.id} to={`/photo/${ph.id}`}>
+                    <img className={b('image')} src={ph.thumbnailUrl} alt={`Photo #${ph.id}`}/>
+                    <div className={b("caption")}>{ph.title}</div>
                 </Link>
             )}
-        </ol>
+        </div>
     }
 }
 
