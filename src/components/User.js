@@ -4,7 +4,7 @@ import "../styles/User.less";
 import {connect} from "react-redux";
 import {fetchInputUser} from "../actions/users";
 import {getAllAlbumsIds, getUserById} from "../reducers";
-import {fetchAlbums} from "../actions/albums";
+import {fetchUserAlbums} from "../actions/albums";
 import AllAlbums from "./AllAlbums";
 
 const b = block("User");
@@ -37,6 +37,6 @@ export default connect((state, props) => {
         return {user, albumsIds};
     }, (dispatch) => ({
         fetchUser: id => dispatch(fetchInputUser(id)),
-        fetchAlbums: userId => dispatch(fetchAlbums(userId))
+        fetchAlbums: userId => dispatch(fetchUserAlbums(userId))
     })
 )(User);

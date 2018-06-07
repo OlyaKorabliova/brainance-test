@@ -10,10 +10,17 @@ export const fetchFail = (id) => ({type: FETCH_FAIL, id, error: true});
 
 // -------------------------------------------------------
 
-export const fetchAlbums = userId => async (dispatch) => {
-    const albums = await (await fromApi.getUserAlbums(userId)).json(); // []
+export const fetchUserAlbums = userId => async (dispatch) => {
+    const albums = await (await fromApi.getUserAlbums(userId)).json();
     const albums2 = normalize(albums, albumsListSchema);
     albums.map(el => {
         dispatch(fetchAlbumSuccess(el.id, albums2.result, albums2.entities.albums))
     });
+};
+
+export const fetchSpecificAlbum = id => async (dispatch) => {
+    dispatch(fetchAlbum(id));
+    let album = await (await fromApi.getAlbum(id)).json();
+    album = normalize([album], albumsListSchema);
+    dispatch(fetchAlbumSuccess(id, album.result, album.entities.albums))
 };

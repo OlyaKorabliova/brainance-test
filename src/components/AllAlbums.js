@@ -3,6 +3,7 @@ import block from "../helpers/BEM";
 import "../styles/AllAlbums.less";
 import {connect} from "react-redux";
 import {getAlbumById} from "../reducers";
+import {Link} from "react-router-dom";
 
 const b = block("AllAlbums");
 
@@ -15,7 +16,9 @@ class AllAlbums extends Component {
     render() {
         return <ul className={b()}>
             {this.props.albums.map(al =>
-                <li key={al.id}>{al.title}</li>
+                <Link key={al.id} to={`/album/${al.id}`}>
+                    <li>{al.title}</li>
+                </Link>
             )}
         </ul>
     }
