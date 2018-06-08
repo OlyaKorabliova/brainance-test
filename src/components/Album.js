@@ -18,8 +18,11 @@ class Album extends Component {
 
         if (!album || album.id === undefined) {
             fetchAlbum(id);
-            fetchPhotos(id);
             return null;
+        }
+        if (photosIds.length === 0) {
+            fetchPhotos(id);
+
         }
         return <div>
             <Header text={album.title}/>

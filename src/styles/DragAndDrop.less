@@ -1,0 +1,33 @@
+.DragAndDrop {
+  width: 150px;
+  height: 150px;
+  border: 1px dashed black;
+  color: black;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 75px;
+  margin: 3px;
+  &__text {
+    text-align: center;
+    margin: 32px 0;
+  }
+  &__image {
+    height: 100px;
+    opacity: 0.7;
+    margin: 0 8px 8px 0;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &_active {
+    border: 1px solid;
+    background-color: #9bcf7c;
+    color: #0da32a;
+  }
+
+  &_reject {
+    border: 1px solid;
+    background-color: #b46663;
+    color: #7c0606;
+  }
+}

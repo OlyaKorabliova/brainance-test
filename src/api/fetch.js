@@ -19,3 +19,7 @@ export async function getAlbumPhotos(id) {
 export async function getPhoto(id) {
     return await fetch(`${HOST}/photos/${id}`)
 }
+
+export const getAbsolutelyAllPhotos = async () => {
+    return await fetch(`${HOST}/photos`)
+};

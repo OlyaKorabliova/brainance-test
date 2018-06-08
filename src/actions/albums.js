@@ -1,10 +1,8 @@
-import {FETCH_ALBUM, FETCH_ALBUM_SUCCESS, FETCH_FAIL} from '../helpers/actionTypes';
-
+import {FETCH_ALBUM_SUCCESS, FETCH_FAIL} from '../helpers/actionTypes';
 import * as fromApi from "../api/fetch";
 import {albumsListSchema} from "../helpers/schema";
 import {normalize} from 'normalizr';
 
-export const fetchAlbum = (id) => ({type: FETCH_ALBUM, id});
 export const fetchAlbumSuccess = (id, ids, albums) => ({type: FETCH_ALBUM_SUCCESS, id, ids, albums});
 export const fetchFail = (id) => ({type: FETCH_FAIL, id, error: true});
 
@@ -19,7 +17,6 @@ export const fetchUserAlbums = userId => async (dispatch) => {
 };
 
 export const fetchSpecificAlbum = id => async (dispatch) => {
-    dispatch(fetchAlbum(id));
     let album = await (await fromApi.getAlbum(id)).json();
     album = normalize([album], albumsListSchema);
     dispatch(fetchAlbumSuccess(id, album.result, album.entities.albums))

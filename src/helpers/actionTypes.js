@@ -1,7 +1,5 @@
-export const FETCH_ALBUM = 'FETCH_ALBUM';
 export const FETCH_ALBUM_SUCCESS = 'FETCH_ALBUM_SUCCESS';
-export const FETCH_PHOTO = 'FETCH_PHOTO';
+export const ADD_PHOTO = 'ADD_PHOTO';
 export const FETCH_PHOTO_SUCCESS = 'FETCH_PHOTO_SUCCESS';
-export const FETCH_FAIL = 'FETCH_FAIL';
-export const FETCH_USER = 'FETCH_USER';
 export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS';
+export const FETCH_FAIL = 'FETCH_FAIL';
